@@ -2,6 +2,12 @@ from bot import telegram_chatbot
 
 bot = telegram_chatbot("config.cfg")
 
+def profanity_check(text):
+    dictionary = ["bad","verybad"]
+    if set(dictionary).intersection(set(text.split())):
+        return True
+    else:
+        return False
 
 def make_reply(msg):
     reply = None
